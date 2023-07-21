@@ -1,0 +1,47 @@
+server:
+  port: 80
+spring:
+  jackson:
+    serialization:
+      indent-output: true
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  datasource:
+    url: jdbc:mysql://gz-cynosdbmysql-grp-2789x5v5.sql.tencentcdb.com:21842/comic?allowMultiQueries=true&useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=TRUE&serverTimezone=PRC
+    username: root
+    password: 8954036abc!@#..
+  redis:
+    host: r-wz90qvhvyvqtghx3h7pd.redis.rds.aliyuncs.com
+    password: Zqianm_($#^!%R)edis+-@20*=20
+logging:
+  level:
+    com.boolib.simple: debug
+    com.boolib.simple.mapper: debug
+
+
+
+
+sa-token:
+  # token名称 (同时也是cookie名称)
+  token-name: satoken
+  # token有效期，单位s 默认30天, -1代表永不过期
+  timeout: 2592000
+  # token临时有效期 (指定时间内无操作就视为token过期) 单位: 秒
+  activity-timeout: -1
+  # 是否允许同一账号并发登录 (为true时允许一起登录, 为false时新登录挤掉旧登录)
+  is-concurrent: false
+  # 在多人登录同一账号时，是否共用一个token (为true时所有登录共用一个token, 为false时每次登录新建一个token)
+  is-share: true
+  # token风格
+  token-style: uuid
+  # 是否输出操作日志
+  is-log: true
+request:
+  sign:
+    key: uLB9R3bDlsvJTUnBlltlLRIfDpak6ucMm1lYclgBOghZUC2SyLQViMYe/nzmtnErq+QjPN6P1gUJk/27/7voCqJwm0OEHiJI5njFbXMwnq6hSlS+jOzSEokQWuupBHd7wyOHviHuaDA5k9NAFSl84lHZyjNulOX4Sg87mnVC4qUokCus0s4IZsqambswqbEA/TVQyBJECeNx9Xw37rBri0rhCQUA+Ble+sXPLsIiuWFCMFx35LnVPZTAtRB35Gvpi64g+frE0JXLEkflSpL/vwgQqlm6ErTNt37gxE6gKMcG8/Yuz4jb1/7u/hjGn5SH0dwMcX3XHkssxjFO5GEf7Q==
+    webKey: dUxCOVIzYkRsc3ZKVFVuQmxsdGxMUklmRHBhazZ1Y01tMWxZY2xnQk9naFpVQzJTeUxRVmlNWWUvbnptdG5FcnErUWpQTjZQMWdVSmsvMjcvN3ZvQ3FKd20wT0VIaUpJNW5qRmJYTXducTZoU2xTK2pPelNFb2tRV3V1cEJIZDd3eU9IdmlIdWFEQTVrOU5BRlNsODRsSFp5ak51bE9YNFNnODdtblZDNHFVb2tDdXMwczRJWnNxYW1ic3dxYkVBL1RWUXlCSkVDZU54OVh3MzdyQnJpMHJoQ1FVQStCbGUrc1hQTHNJaXVXRkNNRngzNUxuVlBaVEF0UkIzNUd2cGk2NGcrZnJFMEpYTEVrZmxTcEwvdndnUXFsbTZFclROdDM3Z3hFNmdLTWNHOC9ZdXo0amIxLzd1L2hqR241U0gwZHdNY1gzWEhrc3N4akZPNUdFZjdRPT0=
+oss:
+  qiniu:
+    accessKey: 8lkZmE-t13dL0SxxQGZxW6IYX9Lj-C5Lg58T3KjE
+    secretKey: 2A58s-xwvq-oNKCZnjhcJ_Mn4vnNXzJW-xv7JIhc
+    domain: http://rwulzs3wr.hn-bkt.clouddn.com

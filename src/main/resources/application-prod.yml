@@ -1,0 +1,51 @@
+logging:
+  config: classpath:log4j2-dev.xml
+  file:
+    path: /mnt/miquan-saas/logs
+  level:
+    com:
+      bus: debug
+      github:
+        binarywang: debug
+    me:
+      chanjar:
+        weixin: debug
+mybatis-plus:
+  configuration:
+    jdbc-type-for-null: 'null'
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mapper/*Mapper.xml
+server:
+  port: 9286
+  tomcat:
+    accept-count: 1000
+    max-connections: 8192
+    max-keep-alive-requests: 512
+    threads:
+      max: 1000
+      min-spare: 100
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: M+q@^Sa#as_C%li)e(nt*_-=2&035$
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://zqmao168.mysql.polardb.rds.aliyuncs.com/miquan_saas_test_db?allowMultiQueries=true&useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=TRUE&serverTimezone=PRC
+    username: mq_saas_client
+  redis:
+    client-type: lettuce
+    database: 2
+    host: r-wz90qvhvyvqtghx3h7pd.redis.rds.aliyuncs.com
+    lettuce:
+      pool:
+        enabled: true
+        max-active: 1000
+        max-idle: 8
+        max-wait: 1000
+        min-idle: 1
+        time-between-eviction-runs: 2000
+      shutdown-timeout: 1000
+    password: Zqianm_($#^!%R)edis+-@20*=20
+    port: 6379
+    redisson:
+      file: classpath:redisson-dev.yaml
+    timeout: 2000

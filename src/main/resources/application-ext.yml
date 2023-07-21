@@ -1,0 +1,6 @@
+default:
+  token:
+    expire: 3600
+  user:
+    nickname: 用户
+    userAvatar:

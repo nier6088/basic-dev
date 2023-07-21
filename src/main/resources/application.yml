@@ -1,0 +1,81 @@
+server:
+  tomcat:
+    accept-count: 1000
+    max-connections: 8192
+    max-keep-alive-requests: 512
+    threads:
+      max: 1000
+      min-spare: 100
+management:
+  endpoints:
+    web:
+      exposure:
+        exclog-conf:
+          xmllude: env,beans
+        include: '*'
+spring:
+  application:
+    name: simple-project
+  jackson:
+    defaultproperty-inclusion: always
+    serialization:
+      write-dates-as-timestamps: true
+  main:
+    allow-circular-references: true
+  mvc:
+    throw-exception-if-no-handler-found: true
+  profiles:
+    active: dev
+    include: ext
+  task:
+    execution:
+      pool:
+        core-size: 10
+        keep-alive: 10s
+        max-size: 1000
+        queue-capacity: 100
+  web:
+    resources:
+      add-mappings: false
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      auto-commit: true
+      connection-timeout: 30000
+      idle-timeout: 30000
+      max-lifetime: 1800000
+      maximum-pool-size: 1000
+      minimum-idle: 10
+      pool-name: mqsaasHikariCP
+      read-only: false
+  redis:
+    client-type: lettuce
+    database: 15
+    lettuce:
+      pool:
+        enabled: true
+        max-active: 1000
+        max-idle: 8
+        max-wait: 1000
+        min-idle: 1
+        time-between-eviction-runs: 2000
+      shutdown-timeout: 1000
+    port: 6379
+    timeout: 2000
+
+mybatis-plus:
+  configuration:
+    jdbc-type-for-null: 'null'
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: 'classpath*:mapper/*Mapper.xml,classpath*:mapper/**/*Mapper.xml'
+logging:
+  file:
+    path: /mnt/simple-project/logs
+  level:
+    com:
+      boolib: debug
+      github:
+        binarywang: debug
+    me:
+      chanjar:
+        weixin: debug
