@@ -8,11 +8,11 @@ spring:
     time-zone: GMT+8
   datasource:
     url: jdbc:mysql://gz-cynosdbmysql-grp-2789x5v5.sql.tencentcdb.com:21842/comic?allowMultiQueries=true&useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=TRUE&serverTimezone=PRC
-    username: root
-    password: 8954036abc!@#..
+    username:
+    password:
   redis:
-    host: r-wz90qvhvyvqtghx3h7pd.redis.rds.aliyuncs.com
-    password: Zqianm_($#^!%R)edis+-@20*=20
+    host: 127.0.0.1
+
 logging:
   level:
     com.boolib.simple: debug
